@@ -15,12 +15,12 @@ export class ProductsComponent implements OnInit {
   country2: string = 'sweden';
   src2: string = 'https://ugra.ru/pics-unidoski.ru/_content/img_board/29/285711.jpg';
 
-  isDisabled: boolean = false;
+  isShowing: boolean = false;
 
   name: string = '';
 
   handleClick() {
-    this.isDisabled = !this.isDisabled;
+    this.isShowing = !this.isShowing;
   }
 
   constructor() { }

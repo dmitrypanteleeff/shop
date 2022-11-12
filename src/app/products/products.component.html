@@ -1,36 +1,39 @@
 <h2>Programming product list</h2>
 
-<button [disabled]="isDisabled"
-  (click)="handleClick()">
-    show goods
+<button (click)="handleClick()">
+    <ng-container *ngIf="!isShowing">Show goods</ng-container>
+    <ng-container *ngIf="isShowing">Hide goods</ng-container>
 </button>
 
-<input type="text"
-  [(ngModel)]="name"/>
+<!-- <input type="text"
+  [(ngModel)]="name"/> -->
 
 <p>{{ name }}</p>
 
-<ul>
-    <li>
-        <div>
-            <img [src]="src" 
-              width="100"
-              [alt]="good"/>
-        </div>
-        <div>
-            <span>{{ good }} by {{ country }}</span>
-        </div>
-    </li>
+<ng-container *ngIf="isShowing">
+    <ul>
+        <li>
+            <div>
+                <img [src]="src" 
+                  width="100"
+                  [alt]="good"/>
+            </div>
+            <div>
+                <span>{{ good }} by {{ country }}</span>
+            </div>
+        </li>
+    
+        <li>
+            <div>
+                <img [src]="src2" 
+                  width="100"
+                  [alt]="good2"/>
+            </div>
+            <div>
+                <span>{{ good2 }} by {{ country2 }}</span>
+            </div>
+        </li>
+    </ul>
+</ng-container>
 
-    <li>
-        <div>
-            <img [src]="src2" 
-              width="100"
-              [alt]="good2"/>
-        </div>
-        <div>
-            <span>{{ good2 }} by {{ country2 }}</span>
-        </div>
-    </li>
-</ul>
 
