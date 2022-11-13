@@ -12,27 +12,18 @@
 
 <ng-container *ngIf="isShowing">
     <ul>
-        <li>
-            <div>
-                <img [src]="src" 
-                  width="100"
-                  [alt]="good"/>
-            </div>
-            <div>
-                <span>{{ good }} by {{ country }}</span>
-            </div>
-        </li>
-    
-        <li>
-            <div>
-                <img [src]="src2" 
-                  width="100"
-                  [alt]="good2"/>
-            </div>
-            <div>
-                <span>{{ good2 }} by {{ country2 }}</span>
-            </div>
-        </li>
+        <ng-container *ngFor="let item of goods; let i = index;">
+            <li>
+                <div>
+                    <img [src]="item.image" 
+                      width="100"
+                      [alt]="item.good"/>
+                </div>
+                <div>
+                    {{ i + 1 }} <span>{{ item.good }} by {{ item.country }}</span>
+                </div>
+            </li>
+        </ng-container>
     </ul>
 </ng-container>
 
