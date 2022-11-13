@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -16,7 +16,11 @@ import { ProductsComponent } from './products/products.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'de-DE' // 'de-DE' for Germany, 'fr-FR' for France, 'ru-RU' for Russia  ...
+  }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

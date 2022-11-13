@@ -20,7 +20,13 @@
                       [alt]="item.good"/>
                 </div>
                 <div>
-                    {{ i + 1 }} <span>{{ item.good }} by {{ item.country }}</span>
+                    {{ i + 1 }} 
+                    <span>
+                        {{ item.good | titlecase }} by {{ item.country | titlecase }} 
+                    </span>
+                    <span> 
+                        {{ item.price | currency: '₽' }}
+                    </span>
                 </div>
             </li>
         </ng-container>
