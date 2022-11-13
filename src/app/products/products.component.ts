@@ -57,9 +57,12 @@ export class ProductsComponent implements OnInit {
     console.log(itemGood)
   }
 
-  constructor() { }
+  constructor() { 
+    console.log({constructor: 'constructor'})
+  }
 
   ngOnInit(): void {
+    console.log({onInit: 'On Init'})
   }
 
   
