@@ -17,22 +17,24 @@
         <ul>
             <ng-container *ngFor="let item of goods; let i = index;">
                 <li class="good">
-                    <div>
+                    <!-- <div>
                         {{ i + 1 }} 
-                    </div>
+                    </div> -->
                     <div class="good__img-wrapper">
                         <img [src]="item.image" 
                         [alt]="item.good"/>
                     </div>
-                    <div>
-                        
-                        <span>
+                    <div class="good__info">
+                        <div class="good__info-text">
                             {{ item.good | titlecase }} by {{ item.country | titlecase }} 
-                        </span>
-                        <span> 
+                        </div>
+                        <div class="good__info-price"> 
                             {{ item.price | currency: '₽' }}
-                        </span>
+                        </div>
                     </div>
+                    <button class="good__btn">
+                        Add to card
+                    </button>
                 </li>
             </ng-container>
         </ul>
