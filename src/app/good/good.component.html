@@ -1,0 +1,20 @@
+<li class="good">
+    <!-- <div>
+        {{ i + 1 }} 
+    </div> -->
+    <div class="good__img-wrapper">
+        <img [src]="itemGood.image" 
+        [alt]="itemGood.name"/>
+    </div>
+    <div class="good__info">
+        <div class="good__info-text">
+            {{ itemGood.name | titlecase }} by {{ itemGood.country | titlecase }} 
+        </div>
+        <div class="good__info-price"> 
+            {{ itemGood.price | currency: '₽' }}
+        </div>
+    </div>
+    <button class="good__btn">
+        Add to card
+    </button>
+</li>
