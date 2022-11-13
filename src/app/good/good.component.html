@@ -14,7 +14,8 @@
             {{ itemGood.price | currency: '₽' }}
         </div>
     </div>
-    <button class="good__btn">
+    <button class="good__btn"
+      (click)="addToCard()">
         Add to card
     </button>
 </li>

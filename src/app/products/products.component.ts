@@ -44,8 +44,17 @@ export class ProductsComponent implements OnInit {
 
   name: string = '';
 
+  cards: Good[] = [
+
+  ]
+
   handleClick() {
     this.isShowing = !this.isShowing;
+  }
+
+  addToCard(itemGood: Good) {
+    console.log('dasd')
+    console.log(itemGood)
   }
 
   constructor() { }

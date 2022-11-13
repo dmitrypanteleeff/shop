@@ -16,7 +16,10 @@
     <ng-container *ngIf="isShowing">
         <ul>
             <ng-container *ngFor="let item of goods; let i = index;">
-                <app-good [itemGood]="item"></app-good>
+                <app-good 
+                  (itemGoodEmitter)="addToCard($event)"
+                  [itemGood]="item">
+                </app-good>
             </ng-container>
         </ul>
     </ng-container>
