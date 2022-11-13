@@ -1,36 +1,43 @@
-<h2>Programming product list</h2>
+<div class="container">
 
-<button (click)="handleClick()">
-    <ng-container *ngIf="!isShowing">Show goods</ng-container>
-    <ng-container *ngIf="isShowing">Hide goods</ng-container>
-</button>
 
-<!-- <input type="text"
-  [(ngModel)]="name"/> -->
+    <h2>Programming product list</h2>
 
-<p>{{ name }}</p>
+    <button (click)="handleClick()">
+        <ng-container *ngIf="!isShowing">Show goods</ng-container>
+        <ng-container *ngIf="isShowing">Hide goods</ng-container>
+    </button>
 
-<ng-container *ngIf="isShowing">
-    <ul>
-        <ng-container *ngFor="let item of goods; let i = index;">
-            <li>
-                <div>
-                    <img [src]="item.image" 
-                      width="100"
-                      [alt]="item.good"/>
-                </div>
-                <div>
-                    {{ i + 1 }} 
-                    <span>
-                        {{ item.good | titlecase }} by {{ item.country | titlecase }} 
-                    </span>
-                    <span> 
-                        {{ item.price | currency: '₽' }}
-                    </span>
-                </div>
-            </li>
-        </ng-container>
-    </ul>
-</ng-container>
+    <!-- <input type="text"
+    [(ngModel)]="name"/> -->
+
+    <p>{{ name }}</p>
+
+    <ng-container *ngIf="isShowing">
+        <ul>
+            <ng-container *ngFor="let item of goods; let i = index;">
+                <li class="good">
+                    <div>
+                        {{ i + 1 }} 
+                    </div>
+                    <div class="good__img-wrapper">
+                        <img [src]="item.image" 
+                        [alt]="item.good"/>
+                    </div>
+                    <div>
+                        
+                        <span>
+                            {{ item.good | titlecase }} by {{ item.country | titlecase }} 
+                        </span>
+                        <span> 
+                            {{ item.price | currency: '₽' }}
+                        </span>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+    </ng-container>
+
+</div>
 
 

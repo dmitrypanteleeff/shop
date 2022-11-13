@@ -32,6 +32,18 @@ export class ProductsComponent implements OnInit {
       image: 'https://ugra.ru/pics-unidoski.ru/_content/img_board/29/285711.jpg',
       price: 900 
     },
+    {
+      good: 'gameboy',
+      country: 'italy',
+      image: 'https://game-cinema.ru/userfiles/shop_item_image_main_list_small/22f3ff1ca0ece324309bc7bb138b8865.jpg',
+      price: 700 
+    },
+    {
+      good: 'Electronica',
+      country: 'russia',
+      image: 'http://voyager.by/wp-content/uploads/2016/11/DSC_3334-300x209.jpg',
+      price: 1100 
+    }
   ]
 
   isShowing: boolean = false;
