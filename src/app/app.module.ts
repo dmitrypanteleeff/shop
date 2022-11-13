@@ -5,17 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
-import { GoodComponent } from './good/good.component';
+import { GoodComponent } from './products/good/good.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ProductsComponent,
-    GoodComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ProductsModule,
     AppRoutingModule
   ],
   providers: [{

@@ -6,7 +6,7 @@ import {
   EventEmitter,
   OnDestroy
 } from '@angular/core';
-import { Good } from '../types/Good';
+import { Good } from '../../types/Good';
 
 @Component({
   selector: 'app-good',
