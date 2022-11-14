@@ -14,7 +14,7 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
 })
 export class ProductsComponent implements OnInit {
 
-  constructor(private productsService: ProductsService) {  
+  constructor(private productsService: ProductsService) {
   }
 
   ngOnInit(): void {
@@ -42,8 +42,8 @@ export class ProductsComponent implements OnInit {
 
 
 
- 
 
-  
+
+
 
 }

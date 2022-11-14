@@ -1,21 +1,30 @@
 <li class="good">
     <!-- <div>
-        {{ i + 1 }} 
+        {{ i + 1 }}
     </div> -->
     <div class="good__img-wrapper">
-        <img [src]="itemGood.image" 
+        <img [src]="itemGood.image"
         [alt]="itemGood.name"/>
     </div>
     <div class="good__info">
         <div class="good__info-text">
-            {{ itemGood.name | titlecase }} by {{ itemGood.country | titlecase }} 
+            {{ itemGood.name | titlecase }} by {{ itemGood.country | titlecase }}
         </div>
-        <div class="good__info-price"> 
+        <div class="good__info-price">
             {{ itemGood.price | currency: '₽' }}
         </div>
     </div>
-    <button class="good__btn"
-      (click)="addToCard()">
-        Add to card
-    </button>
+    <ng-container *ngIf="!isInCart">
+      <button class="good__btn"
+        (click)="addToCart()">
+          Add to cart
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="isInCart">
+      <button class="good__btn"
+        (click)="removeFromCart()">
+          Remove from cart
+      </button>
+    </ng-container>
 </li>

@@ -1,12 +1,13 @@
-import { 
-  Component, 
-  OnInit, 
+import {
+  Component,
+  OnInit,
   Input,
   Output,
   EventEmitter,
   OnDestroy
 } from '@angular/core';
 import { Good } from '../../types/Good';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-good',
@@ -17,14 +18,23 @@ export class GoodComponent implements OnInit {
 
   @Input() itemGood: Good = {} as Good;
 
-  @Output() itemGoodEmitter = new EventEmitter<Good>()
+  isInCart: Boolean = false;
 
-  addToCard() {
-    this.itemGoodEmitter.emit(this.itemGood)
+  // @Output() itemGoodEmitter = new EventEmitter<Good>()
+
+  constructor(private cartService: CartService) {
+    //console.log({Good_Constructor: 'constructor'})
   }
 
-  constructor() { 
-    console.log({Good_Constructor: 'constructor'})
+  addToCart() {
+    this.cartService.add(this.itemGood);
+    this.isInCart = !this.isInCart;
+    //this.itemGoodEmitter.emit(this.itemGood)
+  }
+
+  removeFromCart() {
+    this.cartService.remove(this.itemGood);
+    this.isInCart = !this.isInCart;
   }
 
   ngOnInit(): void {}

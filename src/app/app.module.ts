@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { GoodComponent } from './products/good/good.component';
 import { ProductsModule } from './products/products.module';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<h2>Your choice</h2>
+<ng-container *ngIf="getCart().length > 0">
+  <ng-container *ngFor="let item of getCart();">
+    <div>
+      {{ item.name }}
+    </div>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="getCart().length == 0">
+  <div>
+    No goods in your cart
+  </div>
+</ng-container>
+
+
+
