@@ -6,4 +6,18 @@
 
 </app-cart>
 -->
-<router-outlet></router-outlet>
+<nav class="flex justify-between p-4 bg-purple-800 text-white">
+  <div>
+    <a routerLink="/">Shop</a>
+  </div>
+  <div>
+    <button routerLink="/cart">
+      My Card
+    </button>
+  </div>
+</nav>
+
+<div class="container mx-auto">
+  <router-outlet></router-outlet>
+</div>
+
