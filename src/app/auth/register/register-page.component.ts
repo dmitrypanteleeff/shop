@@ -10,6 +10,7 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 export class RegisterPageComponent implements OnInit {
 
   passwordMatched: boolean = true;
+  isLoading: Boolean = false;
 
   form: LoginForm = {
     email: '',
@@ -22,6 +23,10 @@ export class RegisterPageComponent implements OnInit {
   }
 
   sendFile() {
+    if (this.isLoading) {
+      return
+    }
+    this.isLoading = true;
     if (this.form.password !== this.form.confirm) {
       this.passwordMatched = false;
       return;
@@ -31,15 +36,17 @@ export class RegisterPageComponent implements OnInit {
     createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
       .then((userCredential) => {
         // Signed in
-        console.log('userCredential',userCredential)
+        console.log('userCredential', userCredential)
         //const user = userCredential.user;
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert('Error')
         // ..
-      });
+      })
+      .finally(() => this.isLoading = false)
 
     }
 
