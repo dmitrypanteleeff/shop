@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginForm } from 'src/app/types/LoginForm';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 @Component({
   selector: 'app-register-page',
@@ -7,6 +8,8 @@ import { LoginForm } from 'src/app/types/LoginForm';
   styleUrls: ['./register-page.component.scss']
 })
 export class RegisterPageComponent implements OnInit {
+
+  passwordMatched: boolean = true;
 
   form: LoginForm = {
     email: '',
@@ -19,7 +22,25 @@ export class RegisterPageComponent implements OnInit {
   }
 
   sendFile() {
+    if (this.form.password !== this.form.confirm) {
+      this.passwordMatched = false;
+      return;
+    }
     console.log(this.form)
-  }
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, this.form.email, this.form.password)
+      .then((userCredential) => {
+        // Signed in
+        console.log('userCredential',userCredential)
+        //const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+
+    }
 
 }
