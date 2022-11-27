@@ -4,12 +4,10 @@ import { LoginPageComponent } from './login/login-page.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterPageComponent } from './register/register-page.component';
 
-
-
 @NgModule({
   declarations: [
     LoginPageComponent,
-    RegisterPageComponent
+    RegisterPageComponent,
   ],
   imports: [
     CommonModule,

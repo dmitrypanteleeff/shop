@@ -63,10 +63,10 @@
       <button class="py-3 px-2 w-full rounded border-2 border-none bg-purple-800 hover:bg-purple-900 text-white cursor-pointer"
         type="submit"
         [disabled]="email.invalid || password.invalid || confirm_password.invalid">
-        <ng-container *ngIf="isLoading">
+        <ng-container *ngIf="isLoading()">
           Loading...
         </ng-container>
-        <ng-container *ngIf="!isLoading">
+        <ng-container *ngIf="!isLoading()">
           Submit
         </ng-container>
       </button>
